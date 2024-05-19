@@ -29,3 +29,5 @@ function minDistance(n) {
   //  return smallest difference
   return (diff === n) ? (diff - 1) : diff
 }
+
+// or
