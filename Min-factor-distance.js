@@ -31,3 +31,19 @@ function minDistance(n) {
 }
 
 // or
+
+function minDistance(n){
+  if (n % 2 === 0) return 1;
+  
+  let res = n;
+  let last = -Infinity;
+  
+  for (let i = 1; i <= n; i += 2) {
+    if (n % i) continue;
+    
+    const diff = i - last;
+    if (res > diff) res = diff;
+    last = i
+  }
+  return res
+}
