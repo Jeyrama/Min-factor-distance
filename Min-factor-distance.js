@@ -11,3 +11,21 @@ Hence the asnwer will be 2 (=13-11)
 
 
 // Solution
+
+function minDistance(n) {
+  
+  //  get factors of n
+  const factors = [1]
+  for (let i = 2; i < Math.min( n / 2 + 1); i++) {
+    if (n % i === 0) factors.push(i)
+  }
+
+  //  get differences between each factor in 'factors array'
+  let diff = n
+  for (let i = 1; i < factors.length; i++) {
+    if ( diff > (factors[i] - factors[i-1]))  diff = (factors[i] - factors[i-1])
+  }
+
+  //  return smallest difference
+  return (diff === n) ? (diff - 1) : diff
+}
